@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe Login and Sign Up</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f1e9;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #6d4c41;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #6d4c41;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    
+    .form-group input[type="submit"] {
+      background-color: #6d4c41;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+    }
+    
+    .form-group input[type="submit"]:hover {
+      background-color: #5d4037;
+    }
+    
+    .switch {
+      text-align: center;
+      margin-top: 10px;
+    }
+    
+    .switch a {
+      color: #6d4c41;
+      text-decoration: none;
+    }
+    
+    .switch a:hover {
+      text-decoration: underline;
+    }
+    
+    .error {
+      color: red;
+    }
+    
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<link rel="stylesheet" href="menu button.css">
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">Booking</a></li>
+      <li><a href="#">Comment</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li class="user-dropdown">
+        <img src="png/user menu.png" alt="User" class="user-icon">
+        <div class="dropdown-content">
+          <a href="#">Login</a>
+          <a href="#">Sign Up</a>
+          <a href="#">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <div id="login-form">
+      <h2>Login</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Log In">
+        </div>
+        <div class="switch">
+          <a href="#" onclick="showForgotPasswordForm()">Forgot Password?</a>
+        </div>
+      </form>
+      <div class="switch">
+        <span>Don't have an account yet?</span>
+        <a href="#" onclick="showSignupForm()">Sign up</a>
+      </div>
+    </div>
+    <div id="signup-form" style="display: none;">
+      <h2 style="color: #6d4c41;">Sign Up</h2>
+      <form>
+        <div class="form-group">
+          <label for="signup-username">Username</label>
+          <input type="text" id="signup-username" required>
+        </div>
+        <div class="form-group">
+          <label for="phone-number">Phone Number</label>
+          <input type="tel" id="phone-number" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" required>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Sign Up">
+        </div>
+        <p id="signup-error-msg" class="error"></p>
+        <p id="signup-success-msg" class="success"></p>
+      </form>
+      <div class="switch">
+        <span>Already have an account?</span>
+        <a href="#" onclick="showLoginForm()">Log in</a>
+      </div>
+    </div>
+    <div id="forgot-password-form" style="display: none;">
+      <h2 style="color: #6d4c41;">Forgot Password</h2>
+      <form>
+        <div class="form-group">
+          <label for="forgot-email">Email</label>
+          <input type="email" id="forgot-email" required>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Reset Password">
+        </div>
+      </form>
+      <div class="switch">
+        <a href="#" onclick="showLoginForm()">Back to Login</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showLoginForm() {
+      document.getElementById("login-form").style.display = "block";
+      document.getElementById("signup-form").style.display = "none";
+      document.getElementById("forgot-password-form").style.display = "none";
+    }
+
+    function showSignupForm() {
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("signup-form").style.display = "block";
+      document.getElementById("forgot-password-form").style.display = "none";
+    }
+
+    function showForgotPasswordForm() {
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("signup-form").style.display = "none";
+      document.getElementById("forgot-password-form").style.display = "block";
+    }
+
+    // Rest of the JavaScript code omitted for brevity
+  </script>
+</body>
+</html>

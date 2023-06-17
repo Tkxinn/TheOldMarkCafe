@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Menu Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f1e9;
+        }
+
+        header {
+            background-color: #84604f;
+            color: #FFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .menu-section {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #84604f;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-item button {
+            background-color: #84604f;
+            color: #FFF;
+            border: none;
+            padding: 4px 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-item button:hover {
+            background-color: #9c7f71;
+        }
+
+        form {
+            margin-top: 20px;
+            display: none;
+        }
+
+        form label {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+        }
+
+        form input[type="text"] {
+            width: 200px;
+            padding: 5px;
+        }
+
+        form input[type="submit"] {
+            background-color: #84604f;
+            color: #FFF;
+            border: none;
+            padding: 8px 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #9c7f71;
+        }
+
+        .add-menu-button {
+            background-color: #84604f;
+            color: #FFF;
+            border: none;
+            padding: 8px 16px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-menu-button:hover {
+            background-color: #9c7f71;
+        }
+        
+        .highlight {
+        background-color: #6f4e37;
+        color: #fff;
+    }
+
+    .highlight {
+        background-color: #6f4e37;
+        color: #fff;
+    }
+
+    .search-form {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .search-form input[type="text"] {
+            width: 200px;
+            padding: 5px;
+        }
+
+        .search-form button {
+            background-color: #84604f;
+            color: #FFF;
+            border: none;
+            padding: 8px 16px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-form button:hover {
+            background-color: #9c7f71;
+        }
+
+        .highlight {
+            background-color: #f7e89e;
+        }
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" href="menu button.css">
+  <nav>
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Menu List</a></li>
+      <li><a href="#">Category</a></li>
+      <li><a href="#">Order</a></li>
+      <li><a href="#">Booking</a></li>
+      <li><a href="#">Customer</a></li>
+      <li><a href="#">Staff</a></li>
+      <li><a href="#">Sales Report</a></li>
+      <li class="user-dropdown">
+        <img src="png/user menu.png" alt="User" class="user-icon">
+        <div class="dropdown-content">
+          <a href="#">Login</a>
+          <a href="#">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  
+    <header>
+        <h1>Menu List Management</h1>
+    </header>
+
+    <div class="menu-section">
+        <h2>Menu Items</h2>
+        
+        <div class="search-form">
+            <input type="text" id="search-input" placeholder="Search menu...">
+            <button onclick="searchMenu()">Search</button>
+        </div>
+        
+        <ul id="menu-list">
+            <li class="menu-item" id="menu-item-1">
+                <span>Chicken Bites - RM 12</span>
+                <div>
+                    <button onclick="showForm('edit-form-1')">Edit</button>
+                    <button onclick="deleteMenuItem('menu-item-1')">Delete</button>
+                </div>
+            </li>
+            <li class="menu-item" id="menu-item-2">
+                <span>Onion Ring - RM 10</span>
+                <div>
+                    <button onclick="showForm('edit-form-2')">Edit</button>
+                    <button onclick="deleteMenuItem('menu-item-2')">Delete</button>
+                </div>
+            </li>
+            <li class="menu-item" id="menu-item-3">
+                <span>French Fries - RM 10</span>
+                <div>
+                    <button onclick="showForm('edit-form-2')">Edit</button>
+                    <button onclick="deleteMenuItem('menu-item-3')">Delete</button>
+                </div>
+            </li>
+            <li class="menu-item" id="menu-item-4">
+                <span>Sweet Potato - RM 10</span>
+                <div>
+                    <button onclick="showForm('edit-form-2')">Edit</button>
+                    <button onclick="deleteMenuItem('menu-item-4')">Delete</button>
+                </div>
+            </li>
+            <li class="menu-item" id="menu-item-5">
+                <span>French Fries - RM 10</span>
+                <div>
+                    <button onclick="showForm('edit-form-2')">Edit</button>
+                    <button onclick="deleteMenuItem('menu-item-5')">Delete</button>
+                </div>
+            </li>
+            <li class="menu-item" id="menu-item-6">
+                <span>Waffle Fries - RM 10</span>
+                <div>
+                    <button onclick="showForm('edit-form-2')">Edit</button>
+                    <button onclick="deleteMenuItem('menu-item-6')">Delete</button>
+                </div>
+            </li>
+            <li class="menu-item" id="menu-item-7">
+                <span>Spicy Wedges - RM 10</span>
+                <div>
+                    <button onclick="showForm('edit-form-2')">Edit</button>
+                    <button onclick="deleteMenuItem('menu-item-7')">Delete</button>
+                </div>
+            </li>
+            <li class="menu-item" id="menu-item-8">
+                <span>Seafood Plate - RM 20</span>
+                <div>
+                    <button onclick="showForm('edit-form-2')">Edit</button>
+                    <button onclick="deleteMenuItem('menu-item-8')">Delete</button>
+                </div>
+            </li>
+            <!-- Add more menu items here -->
+        </ul>
+        <button class="add-menu-button" onclick="showForm('add-form')">Add New Menu Item</button>
+    </div>
+
+    <form id="add-form">
+        <h2>Add New Menu Item</h2>
+        <label for="new-item">Item:</label>
+        <input type="text" id="new-item" name="new-item">
+        <br><br>
+        <label for="new-price">Price:</label>
+        <input type="text" id="new-price" name="new-price">
+        <br><br>
+        <input type="submit" value="Add Menu Item">
+    </form>
+
+    <form id="edit-form-1">
+        <h2>Edit Menu Item</h2>
+        <label for="edit-item-1">Item:</label>
+        <input type="text" id="edit-item-1" name="edit-item-1" value="Chicken Bites">
+        <br><br>
+        <label for="edit-price-1">Price:</label>
+        <input type="text" id="edit-price-1" name="edit-price-1" value="12">
+        <br><br>
+        <input type="submit" value="Update Price">
+    </form>
+
+    <form id="edit-form-2">
+        <h2>Edit Menu Item</h2>
+        <label for="edit-item-2">Item:</label>
+        <input type="text" id="edit-item-2" name="edit-item-2" value="Onion Ring">
+        <br><br>
+        <label for="edit-price-2">Price:</label>
+        <input type="text" id="edit-price-2" name="edit-price-2" value="10">
+        <br><br>
+        <input type="submit" value="Update Price">
+    </form>
+
+    <script>
+        function showForm(formId) {
+            const form = document.getElementById(formId);
+            form.style.display = 'block';
+        }
+
+        function deleteMenuItem(itemId) {
+            const menuItem = document.getElementById(itemId);
+            menuItem.remove();
+        }
+        
+        function searchMenu() {
+        const searchInput = document.getElementById('search-input').value.toLowerCase();
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        menuItems.forEach(function(item) {
+            const menuItemText = item.querySelector('span').textContent.toLowerCase();
+            const menuItemId = item.getAttribute('id');
+            const menuItemElement = document.getElementById(menuItemId);
+
+            if (menuItemText.includes(searchInput)) {
+                menuItemElement.classList.add('highlight');
+            } else {
+                menuItemElement.classList.remove('highlight');
+            }
+        });
+    }
+
+    </script>
+</body>
+</html>

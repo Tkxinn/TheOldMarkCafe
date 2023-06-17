@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Sign Up</title>
+  <style>
+    body {
+      background-color: #f5f1e9;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #6d4c41;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #6d4c41;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    
+    .error {
+      color: red;
+    }
+    
+    .success {
+      color: green;
+    }
+    
+    button[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #6d4c41;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    
+    button[type="submit"]:hover {
+      background-color: #5d4037;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Coffee Sign Up</h1>
+    <form id="signup-form">
+      <label for="username">Username</label>
+      <input type="text" id="username" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" required>
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" required>
+      <p id="error-msg" class="error"></p>
+      <p id="success-msg" class="success"></p>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("signup-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirm-password").value;
+      var errorMsg = document.getElementById("error-msg");
+      var successMsg = document.getElementById("success-msg");
+      
+      // Regex pattern to check if the password has at least one uppercase letter, one number, and one symbol.
+      var passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[-+_!@#$%^&*.,?]).*$/;
+      
+      if (username.trim() === "") {
+        errorMsg.textContent = "Please fill in the username.";
+        successMsg.textContent = "";
+      } else if (!passwordPattern.test(password)) {
+        errorMsg.textContent = "Password must include at least one uppercase letter, one number, and one symbol.";
+        successMsg.textContent = "";
+      } else if (password !== confirmPassword) {
+        errorMsg.textContent = "Passwords do not match.";
+        successMsg.textContent = "";
+      } else {
+        errorMsg.textContent = "";
+        successMsg.textContent = "Sign up successful!";
+      }
+    });
+  </script>
+  
+</body>
+</html>

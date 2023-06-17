@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Menu Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f1e9;
+        }
+
+        header {
+            background-color: #84604f;
+            color: #FFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .menu-section {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #84604f;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .menu-category {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-category button {
+            background-color: #84604f;
+            color: #FFF;
+            border: none;
+            padding: 4px 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-category button:hover {
+            background-color: #9c7f71;
+        }
+
+        form {
+            margin-top: 20px;
+            display: none;
+        }
+
+        form label {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+        }
+
+        form input[type="text"] {
+            width: 200px;
+            padding: 5px;
+        }
+
+        form input[type="submit"] {
+            background-color: #84604f;
+            color: #FFF;
+            border: none;
+            padding: 8px 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #9c7f71;
+        }
+
+        .add-category-button {
+            background-color: #84604f;
+            color: #FFF;
+            border: none;
+            padding: 8px 16px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-category-button:hover {
+            background-color: #9c7f71;
+        }
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" href="menu button.css">
+  <nav>
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Menu List</a></li>
+      <li><a href="#">Category</a></li>
+      <li><a href="#">Order</a></li>
+      <li><a href="#">Booking</a></li>
+      <li><a href="#">Customer</a></li>
+      <li><a href="#">Staff</a></li>
+      <li><a href="#">Sales Report</a></li>
+      <li class="user-dropdown">
+        <img src="png/user menu.png" alt="User" class="user-icon">
+        <div class="dropdown-content">
+          <a href="#">Login</a>
+          <a href="#">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  
+    <header>
+        <h1>Menu Categories Management</h1>
+    </header>
+
+    <div class="menu-section">
+        <h2>Food Categories</h2>
+        <ul id="category-list">
+            <li class="menu-category">
+                <span>Sharing Bowl</span>
+                <div>
+                    <button onclick="showForm('edit-form-1')">Edit</button>
+                    <button onclick="deleteCategory('category-1')">Delete</button>
+                </div>
+            </li>
+            <li class="menu-category">
+                <span>Little Dessert</span>
+                <div>
+                    <button onclick="showForm('edit-form-2')">Edit</button>
+                    <button onclick="deleteCategory('category-2')">Delete</button>
+                </div>
+            </li>
+            <li class="menu-category">
+                <span>Signature Souffle Pancake</span>
+                <div>
+                    <button onclick="showForm('edit-form-3')">Edit</button>
+                    <button onclick="deleteCategory('category-3')">Delete</button>
+                </div>
+            </li>
+        </ul>
+        <button class="add-category-button" onclick="showForm('add-form')">Add New Category</button>
+    </div>
+
+    <div class="menu-section">
+        <h2>Drink Categories</h2>
+        <ul id="drink-category-list">
+            <li class="menu-category">
+                <span>Espresso Coffee</span>
+                <div>
+                    <button onclick="showForm('edit-form-4')">Edit</button>
+                    <button onclick="deleteCategory('category-4')">Delete</button>
+                </div>
+            </li>
+            <li class="menu-category">
+                <span>Cold Brew Coffee</span>
+                <div>
+                    <button onclick="showForm('edit-form-5')">Edit</button>
+                    <button onclick="deleteCategory('category-5')">Delete</button>
+                </div>
+            </li>
+            <li class="menu-category">
+                <span>Filter Coffee</span>
+                <div>
+                    <button onclick="showForm('edit-form-6')">Edit</button>
+                    <button onclick="deleteCategory('category-6')">Delete</button>
+                </div>
+            </li>
+        </ul>
+        <button class="add-category-button" onclick="showForm('add-drink-form')">Add New Category</button>
+    </div>
+
+    <form id="add-form">
+        <h2>Add New Food Category</h2>
+        <label for="new-category">Category:</label>
+        <input type="text" id="new-category" name="new-category">
+        <br><br>
+        <input type="submit" value="Add Category">
+    </form>
+
+    <form id="add-drink-form">
+        <h2>Add New Drink Category</h2>
+        <label for="new-drink-category">Category:</label>
+        <input type="text" id="new-drink-category" name="new-drink-category">
+        <br><br>
+        <input type="submit" value="Add Category">
+    </form>
+
+    <form id="edit-form-1">
+        <h2>Edit Food Category</h2>
+        <label for="edit-category-1">Category:</label>
+        <input type="text" id="edit-category-1" name="edit-category-1" value="Sharing Bowl">
+        <br><br>
+        <input type="submit" value="Update Category">
+    </form>
+
+    <form id="edit-form-2">
+        <h2>Edit Food Category</h2>
+        <label for="edit-category-2">Category:</label>
+        <input type="text" id="edit-category-2" name="edit-category-2" value="Little Dessert">
+        <br><br>
+        <input type="submit" value="Update Category">
+    </form>
+
+    <form id="edit-form-3">
+        <h2>Edit Food Category</h2>
+        <label for="edit-category-3">Category:</label>
+        <input type="text" id="edit-category-3" name="edit-category-3" value="Signature Souffle Pancake">
+        <br><br>
+        <input type="submit" value="Update Category">
+    </form>
+
+    <form id="edit-form-4">
+        <h2>Edit Drink Category</h2>
+        <label for="edit-category-4">Category:</label>
+        <input type="text" id="edit-category-4" name="edit-category-4" value="Espresso Coffee">
+        <br><br>
+        <input type="submit" value="Update Category">
+    </form>
+
+    <form id="edit-form-5">
+        <h2>Edit Drink Category</h2>
+        <label for="edit-category-5">Category:</label>
+        <input type="text" id="edit-category-5" name="edit-category-5" value="Cold Brew Coffee">
+        <br><br>
+        <input type="submit" value="Update Category">
+    </form>
+
+    <form id="edit-form-6">
+        <h2>Edit Drink Category</h2>
+        <label for="edit-category-6">Category:</label>
+        <input type="text" id="edit-category-6" name="edit-category-6" value="Filter Coffee">
+        <br><br>
+        <input type="submit" value="Update Category">
+    </form>
+
+    <script>
+        function showForm(formId) {
+            const form = document.getElementById(formId);
+            form.style.display = 'block';
+        }
+
+        function deleteCategory(categoryId) {
+            const category = document.getElementById(categoryId);
+            category.remove();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Old Mark Cafe Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color:#d8cfc1;
+        }
+
+        header {
+            background-color: #84604f;
+            color: #FFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .menu-container {
+            display: flex;
+        }
+
+        .menu-section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #84604f;
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-top: 0;
+            padding-left: 20px;
+        }
+
+        button {
+            background-color: #84604f;
+            color: #FFF;
+            border: none;
+            padding: 8px 16px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #9c7f71;
+        }
+
+        .add-to-cart-button {
+            display: block;
+            background-color: #9f7f70;
+            color: #FFF;
+            border: none;
+            padding: 8px 16px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart-button:hover {
+            background-color: #a66e51;
+        }
+
+        /* Responsive styles */
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            ul {
+                font-size: 14px;
+            }
+
+            .add-to-cart-button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<link rel="stylesheet" href="menu button.css">
+<body>
+    
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">Booking</a></li>
+      <li><a href="#">Comment</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li class="user-dropdown">
+        <img src="png/user menu.png" alt="User" class="user-icon">
+        <div class="dropdown-content">
+          <a href="#">Login</a>
+          <a href="#">Sign Up</a>
+          <a href="#">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+    <header>
+        <h1>Old Mark Cafe Menu</h1>
+    </header>
+
+    <div class="menu-container">
+        <div class="menu-section">
+            <section id="food">
+                <h2>Food</h2>
+                <button onclick="scrollToSubcategory('#sharing-bowl')">Sharing Bowl</button>
+                <button onclick="scrollToSubcategory('#little-dessert')">Little Dessert</button>
+                <button onclick="scrollToSubcategory('#signature-pancake')">Signature Souffle Pancake</button>
+
+                <h2 id="sharing-bowl">Sharing Bowl</h2>
+                <ul>
+                    <li>Chicken Bites - RM 12 <button onclick="addToCart('Chicken Bites', 12)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Onion Ring - RM 10 <button onclick="addToCart('Onion Ring', 10)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>French Fries - RM 10 <button onclick="addToCart('French Fries', 10)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Sweet Potato - RM 10 <button onclick="addToCart('Sweet Potato', 10)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Waffle Fries - RM 10 <button onclick="addToCart('Waffle Fries', 10)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Spicy Wedges - RM 10 <button onclick="addToCart('Spicy Wedges', 10)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Seafood Plate - RM 20 <button onclick="addToCart('Seafood Plate', 20)" class="add-to-cart-button">Add to Cart</button></li>
+                </ul>
+
+                <h2 id="little-dessert">Little Dessert</h2>
+                <ul>
+                    <li>Lemon Caramel Crumble - RM 16/pc <button onclick="addToCart('Lemon Caramel Crumble', 16)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Rich Chocolate Cake - RM 14/pc <button onclick="addToCart('Rich Chocolate Cake', 14)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Tiramisu - RM 19/pc <button onclick="addToCart('Tiramisu', 19)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Cheese Cake - RM 15/pc <button onclick="addToCart('Cheese Cake', 15)" class="add-to-cart-button">Add to Cart</button></li>
+                </ul>
+
+                <h2 id="signature-pancake">Signature Souffle Pancake</h2>
+                <ul>
+                    <li>The Yellow Peach - RM 18 <button onclick="addToCart('The Yellow Peach', 18)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>The Whites Nutty - RM 18 <button onclick="addToCart('The Whites Nutty', 18)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>The Matcha - RM 18 <button onclick="addToCart('The Matcha', 18)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>The Tiramisu - RM 18 <button onclick="addToCart('The Tiramisu', 18)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>The Thai Milk Tea - RM 18 <button onclick="addToCart('The Thai Milk Tea', 18)" class="add-to-cart-button">Add to Cart</button></li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="menu-section">
+            <section id="beverage">
+                <h2>Beverage</h2>
+                <button onclick="scrollToSubcategory('#espresso-coffee')">Espresso Coffee</button>
+                <button onclick="scrollToSubcategory('#cold-brew-coffee')">Cold Brew Coffee</button>
+                <button onclick="scrollToSubcategory('#filter-coffee')">Filter Coffee</button>
+
+                <h2 id="espresso-coffee">Espresso Coffee</h2>
+                <ul>
+                    <li>Espresso Double (Hot) - RM 8 <button onclick="addToCart('Espresso Double (Hot)', 8)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Espresso Tonic Lemon (Cold) - RM 15 <button onclick="addToCart('Espresso Tonic Lemon (Cold)', 15)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Long Black - RM 10 <button onclick="addToCart('Long Black', 10)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Cafe Latte - RM 12 <button onclick="addToCart('Cafe Latte', 12)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Cappuccino - RM 12 <button onclick="addToCart('Cappuccino', 12)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Cafe Mocha - RM 13 <button onclick="addToCart('Cafe Mocha', 13)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Creamy Cafe Latte - RM 13 <button onclick="addToCart('Creamy Cafe Latte', 13)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Oat Milk Cafe Latte - RM 15 <button onclick="addToCart('Oat Milk Cafe Latte', 15)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Vanilla Cafe Latte - RM 13 <button onclick="addToCart('Vanilla Cafe Latte', 13)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Rose Cafe Latte - RM 13 <button onclick="addToCart('Rose Cafe Latte', 13)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Affogato (Vanilla/Matcha) - RM 12 <button onclick="addToCart('Affogato (Vanilla/Matcha)', 12)" class="add-to-cart-button">Add to Cart</button></li>
+                </ul>
+
+                <h2 id="cold-brew-coffee">Cold Brew Coffee</h2>
+                <ul>
+                    <li>Cold Brew Black/White - RM 15 <button onclick="addToCart('Cold Brew Black/White', 15)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Cold Brew Bundle (2 bottles) - RM 26 <button onclick="addToCart('Cold Brew Bundle (2 bottles)', 26)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Cold Brew Bundle (4 bottles) - RM 48 <button onclick="addToCart('Cold Brew Bundle (4 bottles)', 48)" class="add-to-cart-button">Add to Cart</button></li>
+                    <li>Cold Brew Orange Tonic - RM 15 <button onclick="addToCart('Cold Brew Orange Tonic', 15)" class="add-to-cart-button">Add to Cart</button></li>
+                </ul>
+
+                <h2 id="filter-coffee">Filter Coffee</h2>
+                <ul>
+                    <li>Seasonal Single Origin Brew with V60 (Hot/Cold) - RM 16 <button onclick="addToCart('Seasonal Single Origin Brew with V60 (Hot/Cold)', 16)" class="add-to-cart-button">Add to Cart</button></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function scrollToSubcategory(elementId) {
+            document.querySelector(elementId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function addToCart(itemName, price) {
+            // Implement the functionality to add the item to the cart
+            // You can use JavaScript to add the item to the cart object or perform any desired actions.
+            console.log("Added to cart: " + itemName + " - RM " + price);
+        }
+    </script>
+</body>
+</html>

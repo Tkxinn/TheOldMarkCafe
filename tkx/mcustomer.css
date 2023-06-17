@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dashboard-heading {
+    text-align: center;
+    color: #a18262;
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+
+.customer-box {
+  width: 300px;
+  background-color: #a18262;
+  color: #ffffff;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.customer-info {
+  margin-bottom: 10px;
+}
+
+.customer-name {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.customer-phone,
+.customer-email,
+.customer-address {
+  margin-bottom: 5px;
+}
+
+.customer-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.view-btn,
+.delete-btn {
+  background-color: #a18262;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.view-btn {
+  margin-right: 5px;
+}
+
+.delete-btn {
+  margin-left: 5px;
+}

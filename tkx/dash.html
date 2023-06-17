@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="dash.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <link rel="stylesheet" href="menu button.css">
+  <nav>
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Menu List</a></li>
+      <li><a href="#">Category</a></li>
+      <li><a href="#">Order</a></li>
+      <li><a href="#">Booking</a></li>
+      <li><a href="#">Customer</a></li>
+      <li><a href="#">Staff</a></li>
+      <li><a href="#">Sales Report</a></li>
+      <li class="user-dropdown">
+        <img src="png/user menu.png" alt="User" class="user-icon">
+        <div class="dropdown-content">
+          <a href="#">Login</a>
+          <a href="#">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  
+  <div class="dashboard-container">
+    <h1>Admin Dashboard</h1>
+    <div class="dashboard-row">
+      <div class="dashboard-card">
+        <h2>Total Clients Today</h2>
+        <p id="total-clients">0</p>
+      </div>
+      <div class="dashboard-card">
+        <h2>Total Orders Today</h2>
+        <p id="total-orders">0</p>
+      </div>
+      <div class="dashboard-card">
+        <h2>Revenue Day Ratio</h2>
+        <p id="revenue-ratio">0%</p>
+      </div>
+    </div>
+    <div class="dashboard-row">
+      <div class="dashboard-chart">
+        <h2>Revenue Summary</h2>
+        <canvas id="revenue-chart"></canvas>
+      </div>
+      <div class="dashboard-chart">
+        <h2>Order Summary</h2>
+        <canvas id="order-chart"></canvas>
+      </div>
+    </div>
+  </div>
+  <script src="dash.js"></script>
+</body>
+</html>

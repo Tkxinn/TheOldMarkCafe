@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us Page</title>
+  <style>
+    /* Add your CSS styles here */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    .column {
+      float: left;
+      width: 33.3%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+    }
+
+    .about-section {
+      padding: 20px;
+      text-align: center;
+      background-color: #84604f;
+      color: white;
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .container::after, .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .title {
+      color: grey;
+    }
+
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #84604f;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .button:hover {
+      background-color: #9c7f71;
+    }
+
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+  </style>
+</head>
+<link rel="stylesheet" href="menu button.css">
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">Booking</a></li>
+      <li><a href="#">Comment</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li class="user-dropdown">
+        <img src="png/user menu.png" alt="User" class="user-icon">
+        <div class="dropdown-content">
+          <a href="#">Login</a>
+          <a href="#">Sign Up</a>
+          <a href="#">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="about-section">
+    <h1>About Us Page</h1>
+    <p>Some text about who we are and what we do.</p>
+  </div>
+
+  <h2 style="text-align:center">Our Team</h2>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="/png/tkx.jpg" alt="TKX" style="width:100%; height: 300px;">
+        <div class="container">
+          <h2>Tee Kai Xin</h2>
+          <p class="title">Leader</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>1211210550@student.mmu.edu.my</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="/png/lmq.jpg" alt="LMQ" style="width:100%; height: 300px;">
+        <div class="container">
+          <h2>Lim Ming Quan</h2>
+          <p class="title">Group Member</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>mike@example.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="/png/yxy.jpg" alt="YXY" style="width:100%; height: 300px;">
+        <div class="container">
+          <h2>Yong Xin Yi</h2>
+          <p class="title">Group Member</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>1211210526@student.mmu.edu.my</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

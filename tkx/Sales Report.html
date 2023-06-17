@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sales Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7efe0;
+    }
+
+    h1 {
+      color: #84604f; /* New color for the sales report heading */
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    
+    th {
+      background-color: #ceb28c;
+      color: #84604f;
+    }
+    
+    td.total-sales {
+      background-color: #ac8c6f; /* Cafe theme color */
+      color: white;
+    }
+
+    tr:first-child {
+      background-color: #d5b291; /* Different color for the first row */
+      color: white;
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #77583c;
+      border: 1px solid #89592c; /* Border style for the button */
+      color: #ffffff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+      background-color: #ac8c6f;
+    }
+  </style>
+</head>
+<body>
+  <link rel="stylesheet" href="menu button.css">
+  <nav>
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Menu List</a></li>
+      <li><a href="#">Category</a></li>
+      <li><a href="#">Order</a></li>
+      <li><a href="#">Booking</a></li>
+      <li><a href="#">Customer</a></li>
+      <li><a href="#">Staff</a></li>
+      <li><a href="#">Sales Report</a></li>
+      <li class="user-dropdown">
+        <img src="png/user menu.png" alt="User" class="user-icon">
+        <div class="dropdown-content">
+          <a href="#">Login</a>
+          <a href="#">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  
+  <h1>Sales Report</h1>
+  
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Total Order</th>
+      <th>Total Booking</th>
+      <th class="total-sales">Total Sales</th>
+    </tr>
+    <tr>
+      <td>2023-06-01</td>
+      <td>10</td>
+      <td>5</td>
+      <td class="total-sales">RM500</td>
+    </tr>
+    <tr>
+      <td>2023-06-02</td>
+      <td>15</td>
+      <td>8</td>
+      <td class="total-sales">RM800</td>
+    </tr>
+    <tr>
+      <td>2023-06-03</td>
+      <td>8</td>
+      <td>4</td>
+      <td class="total-sales">RM400</td>
+    </tr>
+    <!-- Add more rows with data here -->
+  </table>
+
+  <button onclick="printSalesReport()">Print Sales Report</button>
+
+  <script>
+    function printSalesReport() {
+      window.print();
+    }
+  </script>
+</body>
+</html>
